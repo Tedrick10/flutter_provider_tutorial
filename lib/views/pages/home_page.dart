@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
         child: (studentController.getStudentList.isEmpty)
             ? const Center(
                 child: Text(
-                  "This is no student in page list. \n create new student.",
+                  "There is no student in the student list. \n Create new student.",
                   textAlign: TextAlign.center,
                 ),
               )
