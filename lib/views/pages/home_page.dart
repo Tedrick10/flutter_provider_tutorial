@@ -44,14 +44,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        actions: [
-          IconButton(
-            onPressed: () => _addNewStudent(context),
-            icon: const Icon(
-              Icons.person_add,
-            ),
-          ),
-        ],
       ),
       body: SafeArea(
         child: (studentController.getStudentList.isEmpty)
@@ -74,6 +66,10 @@ class HomePage extends StatelessWidget {
                   const SizedBox(height: 5.0),
                 ],
               ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _addNewStudent(context),
+        child: const Icon(Icons.person_add),
       ),
     );
   }

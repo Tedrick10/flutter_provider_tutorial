@@ -27,7 +27,7 @@ class UpdateStudentPage extends StatelessWidget {
   });
 
   // Final: Class Properties
-  final String title = "Create New Student";
+  final String title = "Update Student";
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _studentNameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
@@ -93,53 +93,55 @@ class UpdateStudentPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            children: [
-              const SizedBox(height: 20.0),
-              TextFieldWidget(
-                controller: _studentNameController,
-                keyboardType: TextInputType.text,
-                readOnly: false,
-                label: "Name",
-                hint: "Enter student name",
-              ),
-              TextFieldWidget(
-                controller: _ageController,
-                keyboardType: TextInputType.number,
-                readOnly: false,
-                label: "Age",
-                hint: "Enter student age",
-              ),
-              TextFieldWidget(
-                controller: _addressController,
-                keyboardType: TextInputType.streetAddress,
-                readOnly: false,
-                label: "Address",
-                hint: "Enter student address",
-              ),
-              TextFieldWidget(
-                controller: _rollNoController,
-                keyboardType: TextInputType.text,
-                readOnly: false,
-                label: "Roll Number",
-                hint: "Enter student roll number",
-              ),
-              const SizedBox(height: 50.0),
-              Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                  vertical: 10.0,
+      body: SafeArea(
+        child: SizedBox(
+          width: double.infinity,
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              children: [
+                const SizedBox(height: 20.0),
+                TextFieldWidget(
+                  controller: _studentNameController,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                  label: "Name",
+                  hint: "Enter student name",
                 ),
-                child: ElevatedButton(
-                  onPressed: () => _onUpdateStudent(context),
-                  child: const Text("Update Student"),
+                TextFieldWidget(
+                  controller: _ageController,
+                  keyboardType: TextInputType.number,
+                  readOnly: false,
+                  label: "Age",
+                  hint: "Enter student age",
                 ),
-              ),
-            ],
+                TextFieldWidget(
+                  controller: _addressController,
+                  keyboardType: TextInputType.streetAddress,
+                  readOnly: false,
+                  label: "Address",
+                  hint: "Enter student address",
+                ),
+                TextFieldWidget(
+                  controller: _rollNoController,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                  label: "Roll Number",
+                  hint: "Enter student roll number",
+                ),
+                const SizedBox(height: 50.0),
+                Container(
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                    vertical: 10.0,
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () => _onUpdateStudent(context),
+                    child: const Text("Update Student"),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
