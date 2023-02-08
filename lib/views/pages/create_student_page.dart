@@ -22,7 +22,7 @@ class CreateStudentPage extends StatelessWidget {
   CreateStudentPage({super.key});
 
   // Final: Class Properties
-  final String title = "Create New Student";
+  final String title = "Create Student";
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _studentNameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
